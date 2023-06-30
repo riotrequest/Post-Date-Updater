@@ -2,6 +2,10 @@
 
 The Post Date Updater plugin for WordPress allows you to easily update the dates and times of your posts in bulk. With this plugin, you can modify the date and time of the last user-set posts, changing their publication dates starting from the day you hit the button down to the last day based on the number of posts you want to be changed.
 
+### Example
+
+You set the number of posts to 100 and press the button. Assume the date is 06/30/2023. It will update the latest post to match today then it will proceed to the next post and assign it 06/29/2023 then again to the post under that to 06/29/2023 and it will continue to do this based on the number of posts you entered in the plugin dashboard.
+
 ### Features
 
 - Dashboard page with a user-friendly interface.
@@ -18,10 +22,6 @@ The Post Date Updater plugin for WordPress allows you to easily update the dates
 4. Click the "Process" button to update the dates and times of the specified posts.
 
 Please note that the plugin uses AJAX technology to handle the update process, ensuring smooth and efficient performance.
-
-### Example
-
-You set the number of posts to 100 and press the button. Assume the date is 06/30/2023. It will update the latest post to match today then it will proceed to the next post and assign it 06/29/2023 then again to the post under that to 06/29/2023 and it will continue to do this based on the number of posts you entered in the plugin dashboard.
 
 ### Requirements
 
