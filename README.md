@@ -4,7 +4,7 @@ The Post Date Updater plugin for WordPress allows you to easily update the dates
 
 ### Example
 
-You set the number of posts to 100 and press the button. Assume the date is 06/30/2023. It will update the latest post to match today then it will proceed to the next post and assign it 06/29/2023 then again to the post under that to 06/29/2023 and it will continue to do this based on the number of posts you entered in the plugin dashboard.
+You set the number of posts to 100 and press the button. Assume the date is 06/30/2023. It will update the latest post to match today then it will proceed to the next post and assign it 06/29/2023 then again to the post under that to 06/28/2023 and it will continue to do this based on the number of posts you entered in the plugin dashboard.
 
 ### Features
 
