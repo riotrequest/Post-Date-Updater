@@ -3,7 +3,7 @@
 Plugin Name: Post Date Updater
 Description: Updates the dates of the last N posts with customizable options.
 Version: 2.0
-Author: Your Name
+Author: riotrequest
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
