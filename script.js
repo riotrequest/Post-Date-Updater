@@ -1,23 +1,42 @@
 jQuery(document).ready(function($) {
-    // Process button click event
     $('#pdp-process-button').on('click', function() {
+        // Retrieve form values.
+        var postsToUpdate = $('#pdp-posts-to-update').val();
+        var daysOffset = $('#pdp-days-offset').val();
+        var timeRangeStart = $('#pdp-time-range-start').val();
+        var timeRangeEnd = $('#pdp-time-range-end').val();
+
+        // Confirm the action.
+        if (!confirm('Are you sure you want to update the dates for the last ' + postsToUpdate + ' posts?')) {
+            return;
+        }
+
+        // Disable button during processing.
+        $('#pdp-process-button').attr('disabled', 'disabled');
+        $('#pdp-result').html('Processing...');
+
         $.ajax({
-            url: ajaxurl,
+            url: pdp_vars.ajaxurl,
             type: 'POST',
             data: {
                 action: 'pdp_process_posts',
-            },
-            beforeSend: function() {
-                // Disable the button during processing
-                $('#pdp-process-button').attr('disabled', 'disabled');
+                nonce: pdp_vars.nonce,
+                pdp_posts_to_update: postsToUpdate,
+                pdp_days_offset: daysOffset,
+                pdp_time_range_start: timeRangeStart,
+                pdp_time_range_end: timeRangeEnd
             },
             success: function(response) {
-                // Enable the button after processing
                 $('#pdp-process-button').removeAttr('disabled');
-                alert(response.data);
+                if (response.success) {
+                    $('#pdp-result').html(response.data);
+                } else {
+                    $('#pdp-result').html('Error: ' + response.data);
+                }
             },
             error: function(xhr, status, error) {
-                console.error(error);
+                $('#pdp-process-button').removeAttr('disabled');
+                $('#pdp-result').html('AJAX error: ' + error);
             }
         });
     });
